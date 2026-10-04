@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SimuTalk - Plataforma de Simulación de Entrevistas con IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- NAVEGACIÓN -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="#" class="brand-logo">
+          <div class="logo-icon">
+            <svg
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="22"
+                y="52"
+                width="12"
+                height="26"
+                rx="6"
+                fill="#10B981"
+              />
+              <rect
+                x="44"
+                y="36"
+                width="12"
+                height="42"
+                rx="6"
+                fill="#10B981"
+              />
+              <rect
+                x="66"
+                y="22"
+                width="12"
+                height="56"
+                rx="6"
+                fill="#10B981"
+              />
+            </svg>
+          </div>
+          <span class="logo-text">SimuTalk</span>
+        </a>
+
+        <nav class="nav-menu" id="navMenu">
+          <a href="#inicio" class="nav-link active">Inicio</a>
+          <a href="#soluciones" class="nav-link">Soluciones</a>
+          <a href="#funcionalidades" class="nav-link">Funcionalidades</a>
+          <a href="#como-funciona" class="nav-link">Cómo funciona</a>
+          <a href="#planes" class="nav-link">Planes</a>
+          <a href="#faq" class="nav-link">Preguntas</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="#login" class="btn-login-nav">Iniciar Sesión</a>
+          <a href="#login" class="btn-primary-nav">Comenzar Gratis</a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="inicio">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Simulaciones de entrevistas impulsadas por IA
+          </div>
+          <h1 class="hero-title">
+            Domina tus entrevistas de trabajo con
+            <span class="highlight">IA en tiempo real</span>
+          </h1>
+          <p class="hero-description">
+            Evaluamos el desempeño de tus candidatos y ayudamos a postulantes a
+            entrenar respuestas, lenguaje corporal y voz mediante escenarios
+            reales ajustados a cada vacante.
+          </p>
+          <div class="hero-buttons">
+            <a href="#login" class="btn-hero-primary">Probar simulador ahora</a>
+            <a href="#soluciones" class="btn-hero-secondary">Saber más</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <strong>+92%</strong>
+              <span>Precisión en feedback</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <strong>&lt; 3 min</strong>
+              <span>Reportes automáticos</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <strong>100%</strong>
+              <span>Adaptado a Perú y Latam</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-card-main">
+            <div class="card-header">
+              <div class="card-user">
+                <div class="avatar-ph">AI</div>
+                <div>
+                  <h4>Entrevistador Virtual</h4>
+                  <p>Proceso Técnico Sr.</p>
+                </div>
+              </div>
+              <span class="live-pill"><span class="pulse"></span> EN VIVO</span>
+            </div>
+            <div class="card-body">
+              <div class="chat-bubble ai-bubble">
+                "Cuéntame sobre una ocasión en la que tuviste que resolver un
+                conflicto en tu equipo de desarrollo."
+              </div>
+              <div class="audio-wave">
+                <span></span><span></span><span></span><span></span
+                ><span></span> <span></span><span></span><span></span>
+              </div>
+              <div class="metrics-grid">
+                <div class="metric">
+                  <span>Fluidez verbal</span>
+                  <div class="progress-bar">
+                    <div class="fill" style="width: 88%"></div>
+                  </div>
+                </div>
+                <div class="metric">
+                  <span>Confianza táctica</span>
+                  <div class="progress-bar">
+                    <div class="fill" style="width: 94%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DUAL CTA POR PÚBLICO -->
+    <section class="dual-cta-section">
+      <div class="section-container">
+        <div class="dual-grid">
+          <div class="dual-card">
+            <span class="category-tag">Para empresas</span>
+            <h2>Cubre tus vacantes en menos tiempo</h2>
+            <p>
+              Evalúa al 100 % de tus postulantes, sustenta cada descarte y
+              libera horas de tu equipo.
+            </p>
+            <a href="#login" class="btn-cta-card">Publicar vacante</a>
+          </div>
+          <div class="dual-card">
+            <span class="category-tag">Para postulantes</span>
+            <h2>Que te evalúen por lo que sabes hacer</h2>
+            <p>
+              Sin traslados, sin esperar respuesta indefinidamente y con
+              retroalimentación al final.
+            </p>
+            <a href="#login" class="btn-cta-card">Buscar empleo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN SOLUCIONES -->
+    <section class="solutions-section" id="soluciones">
+      <div class="section-header">
+        <h2>Diseñado para transformar el reclutamiento</h2>
+        <p>
+          Una herramienta potente tanto para reclutadores que buscan optimizar
+          tiempo como para postulantes que desean destacar.
+        </p>
+
+        <div class="toggle-container">
+          <button class="toggle-btn active" id="tab-empresa">
+            Para Empresas
+          </button>
+          <button class="toggle-btn" id="tab-postulante">
+            Para Postulantes
+          </button>
+        </div>
+      </div>
+
+      <!-- Contenido Empresa -->
+      <div class="solutions-grid" id="content-empresa">
+        <div class="solution-card">
+          <div class="card-icon">⚡</div>
+          <h3>Filtro Técnico Automatizado</h3>
+          <p>
+            Evalúa cientos de candidatos en minutos con entrevistas generadas
+            automáticamente a partir de tus requerimientos en Figma o JD.
+          </p>
+        </div>
+        <div class="solution-card">
+          <div class="card-icon">📊</div>
+          <h3>Métricas de Desempeño</h3>
+          <p>
+            Recibe puntajes sobre habilidades blandas, coherencia técnica,
+            dominio de vocabulario e idoneidad laboral.
+          </p>
+        </div>
+        <div class="solution-card">
+          <div class="card-icon">🛡️</div>
+          <h3>Reducción de Sesgos</h3>
+          <p>
+            Criterios de selección objetivos basados unívocamente en
+            competencias verificadas durante la simulación.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contenido Postulante -->
+      <div class="solutions-grid hidden" id="content-postulante">
+        <div class="solution-card">
+          <div class="card-icon">🎯</div>
+          <h3>Práctica Sin Estrés</h3>
+          <p>
+            Entrena las veces que necesites frente a una IA exigente pero
+            empática antes de tu entrevista real.
+          </p>
+        </div>
+        <div class="solution-card">
+          <div class="card-icon">💡</div>
+          <h3>Feedback Inmediato</h3>
+          <p>
+            Descubre al instante tus muletillas, pausas innecesarias y
+            fortalezas en tu discurso para corregir al momento.
+          </p>
+        </div>
+        <div class="solution-card">
+          <div class="card-icon">📈</div>
+          <h3>Banco de Preguntas Reales</h3>
+          <p>
+            Accede a preguntas de evaluación utilizadas actualmente por empresas
+            top del sector TI y de servicios.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN FUNCIONALIDADES -->
+    <section class="features-section" id="funcionalidades">
+      <div class="section-container">
+        <div class="section-header-left">
+          <span class="sub-title-tag">Funcionalidades</span>
+          <h2>Todo lo que necesita tu proceso</h2>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-box">📐</div>
+            <h3>Criterios ponderados</h3>
+            <p>Tú defines el perfil y el peso de cada criterio</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon-box">⏱️</div>
+            <h3>Entrevista asincrónica</h3>
+            <p>Sin agendar, sin traslados, disponible 24/7</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon-box">🔍</div>
+            <h3>Ranking explicable</h3>
+            <p>Cada puntaje con su evidencia textual</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon-box">👤</div>
+            <h3>Cribado anonimizado</h3>
+            <p>Oculta nombre, edad, género e institución</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon-box">📜</div>
+            <h3>Certificaciones verificadas</h3>
+            <p>Contrastadas ante el emisor, no solo declaradas</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon-box">🛡️</div>
+            <h3>Señales de integridad</h3>
+            <p>Detecta inconsistencias y texto generado</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CÓMO FUNCIONA -->
+    <section class="how-it-works-section" id="como-funciona">
+      <div class="section-container">
+        <div class="section-header-left">
+          <span class="sub-title-tag">Cómo funciona</span>
+          <h2>Tres pasos</h2>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Define tus criterios</h3>
+            <p>
+              Elige qué vas a evaluar y cuánto pesa cada criterio. La rúbrica es
+              tuya, no una plantilla.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>El sistema entrevista</h3>
+            <p>
+              Entrevista asincrónica estructurada. El postulante responde cuando
+              pueda, desde su celular.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Recibe el ranking</h3>
+            <p>
+              Cada puntaje con el fragmento de la respuesta que lo justifica.
+              Auditable y ajustable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN PLANES / PRECIOS -->
+    <section class="pricing-section" id="planes">
+      <div class="section-container">
+        <div class="section-header-left">
+          <span class="sub-title-tag">Planes</span>
+          <h2>Precio por vacante activa</h2>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Prueba -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>Prueba</h3>
+              <div class="price-amount">S/ 0 <span>al mes</span></div>
+            </div>
+            <ul class="pricing-features">
+              <li><span class="check-dot"></span> 1 vacante activa</li>
+              <li><span class="check-dot"></span> Hasta 30 postulantes</li>
+              <li><span class="check-dot"></span> Ranking explicable</li>
+            </ul>
+            <a href="#login" class="btn-plan-outline">Elegir plan</a>
+          </div>
+
+          <!-- Pyme -->
+          <div class="pricing-card featured">
+            <div class="recommended-badge">Recomendado</div>
+            <div class="pricing-header">
+              <h3>Pyme</h3>
+              <div class="price-amount">S/ 149 <span>al mes</span></div>
+            </div>
+            <ul class="pricing-features">
+              <li><span class="check-dot"></span> 5 vacantes activas</li>
+              <li><span class="check-dot"></span> Postulantes ilimitados</li>
+              <li><span class="check-dot"></span> Reportes y dashboard</li>
+            </ul>
+            <a href="#login" class="btn-plan-filled">Elegir plan</a>
+          </div>
+
+          <!-- Consultora -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>Consultora</h3>
+              <div class="price-amount">S/ 349 <span>al mes</span></div>
+            </div>
+            <ul class="pricing-features">
+              <li><span class="check-dot"></span> Vacantes ilimitadas</li>
+              <li><span class="check-dot"></span> Multiempresa</li>
+              <li><span class="check-dot"></span> Exportación y soporte</li>
+            </ul>
+            <a href="#login" class="btn-plan-outline">Elegir plan</a>
+          </div>
+        </div>
+
+        <!-- Banner Publica Vacante -->
+        <div class="pricing-banner">
+          <div class="banner-text">
+            <h3>Publica tu primera vacante hoy</h3>
+            <p>Sin tarjeta de crédito y sin compromiso de permanencia</p>
+          </div>
+          <a href="#login" class="btn-banner-primary">Crear cuenta gratis</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN LOGIN -->
+    <section class="login-section" id="login">
+      <div class="login-wrapper">
+        <div class="login-header">
+          <div class="login-logo">
+            <svg viewBox="0 0 100 100" fill="none" width="40" height="40">
+              <rect
+                x="22"
+                y="52"
+                width="12"
+                height="26"
+                rx="6"
+                fill="#10B981"
+              />
+              <rect
+                x="44"
+                y="36"
+                width="12"
+                height="42"
+                rx="6"
+                fill="#10B981"
+              />
+              <rect
+                x="66"
+                y="22"
+                width="12"
+                height="56"
+                rx="6"
+                fill="#10B981"
+              />
+            </svg>
+          </div>
+          <h2>Iniciar Sesión</h2>
+          <p class="subtitle">
+            ¿Aún no tienes cuenta?
+            <a href="#">Crea una en menos de un minuto.</a>
+          </p>
+        </div>
+
+        <div class="role-selector">
+          <button id="btn-empresa" class="role-btn active" type="button">
+            Soy empresa
+          </button>
+          <button id="btn-postulante" class="role-btn" type="button">
+            Soy postulante
+          </button>
+        </div>
+
+        <form class="login-form" onsubmit="event.preventDefault();">
+          <div class="form-group">
+            <label id="label-email">CORREO CORPORATIVO</label>
+            <input
+              id="input-email"
+              type="email"
+              placeholder="ejemplo@empresa.com"
+              value="reclutamiento@consultora-andina.pe"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label>CONTRASEÑA</label>
+            <input
+              type="password"
+              placeholder="••••••••••••"
+              value="12345678"
+              required
+            />
+          </div>
+
+          <div class="form-options">
+            <label class="checkbox-label">
+              <input type="checkbox" checked />
+              <span>Mantener la sesión abierta</span>
+            </label>
+            <a href="#" class="forgot-link">Olvidé mi contraseña</a>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            Entrar a la plataforma
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- SECCIÓN FAQ -->
+    <section class="faq-section" id="faq">
+      <div class="section-header">
+        <h2>Preguntas Frecuentes</h2>
+        <p>Resolvemos tus dudas sobre cómo opera SimuTalk</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cómo evalúa la IA el desempeño en la entrevista?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Nuestra IA analiza transcripciones de voz en tiempo real, tono,
+              velocidad de comunicación y coincidencia técnica con los
+              requerimientos específicos definidos por la empresa.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Es gratis para postulantes?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Sí, contarás con créditos gratuitos mensuales para realizar
+              simulaciones libres y recibir reportes con recomendaciones de
+              mejora.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cómo se integran las empresas?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Las empresas pueden cargar sus descripciones de puestos de trabajo
+              o conectar su ATS para invitar postulantes a completar la etapa de
+              entrevista automatizada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="logo-icon white-icon">
+              <svg viewBox="0 0 100 100" fill="none" width="28" height="28">
+                <rect
+                  x="22"
+                  y="52"
+                  width="12"
+                  height="26"
+                  rx="6"
+                  fill="#10B981"
+                />
+                <rect
+                  x="44"
+                  y="36"
+                  width="12"
+                  height="42"
+                  rx="6"
+                  fill="#10B981"
+                />
+                <rect
+                  x="66"
+                  y="22"
+                  width="12"
+                  height="56"
+                  rx="6"
+                  fill="#10B981"
+                />
+              </svg>
+            </div>
+            <span class="logo-text">SimuTalk</span>
+          </div>
+          <p>
+            Plataforma inteligente de evaluación y preparación para entrevistas
+            en América Latina.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <div class="link-col">
+            <h4>Plataforma</h4>
+            <a href="#soluciones">Para Empresas</a>
+            <a href="#soluciones">Para Postulantes</a>
+            <a href="#inicio">Simulador IA</a>
+            <a href="#planes">Planes</a>
+          </div>
+          <div class="link-col">
+            <h4>Proyecto</h4>
+            <a href="#">Documentación</a>
+            <a href="#">SOCIEMUPC / UPC</a>
+            <a href="#">Términos de servicio</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Tratamiento de datos personales</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SimuTalk. Todos los derechos reservados. Lima, Perú.</p>
+        <p class="legal-subtext">
+          Ley N.° 29733 de Protección de Datos Personales
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
