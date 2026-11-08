@@ -2,9 +2,14 @@
    SimuTalk · Comportamiento de la landing
    ========================================================= */
 
-// Configuración: cambiar cuando el frontend y el video estén desplegados
+// Configuración: cambiar APP_URL por la URL del frontend Angular desplegado
 const APP_URL = "http://localhost:4200";
-const RUTAS_APP = { login: "/login", register: "/register" };
+// Rutas de la app (ver app.routes.ts del frontend)
+const RUTAS_APP = {
+  login: "/login",
+  registerCompany: "/register/company",
+  registerApplicant: "/register/applicant",
+};
 const VIDEO_URL = ""; // ej. "https://www.youtube.com/watch?v=XXXX"
 
 // Factores de sostenibilidad (los mismos que usa el backend)
@@ -20,13 +25,69 @@ document.addEventListener("DOMContentLoaded", () => {
   configurarPreguntas();
   configurarCalculadora();
   configurarVideo();
+  configurarEncabezado();
+  configurarAparicion();
 });
 
 /* Enlaces hacia la aplicación Angular */
 function configurarEnlacesApp() {
+  const base = APP_URL.replace(/\/$/, "");
   document.querySelectorAll("[data-app]").forEach((enlace) => {
-    enlace.href = APP_URL + RUTAS_APP[enlace.dataset.app];
+    const ruta = RUTAS_APP[enlace.dataset.app];
+    if (ruta) enlace.href = base + ruta;
   });
+}
+
+/* Encabezado: se vuelve sólido y con sombra al bajar */
+function configurarEncabezado() {
+  const encabezado = document.getElementById("encabezado");
+  if (!encabezado) return;
+  const actualizar = () => encabezado.classList.toggle("con-scroll", window.scrollY > 12);
+  window.addEventListener("scroll", actualizar, { passive: true });
+  actualizar();
+}
+
+/* Los bloques con data-reveal aparecen al entrar en pantalla; las cifras cuentan desde 0 */
+function configurarAparicion() {
+  const bloques = document.querySelectorAll("[data-reveal]");
+  const sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (sinMovimiento || !("IntersectionObserver" in window)) {
+    bloques.forEach((b) => b.classList.add("visible"));
+    return;
+  }
+
+  const observador = new IntersectionObserver(
+    (entradas) => {
+      entradas.forEach((entrada) => {
+        if (!entrada.isIntersecting) return;
+        entrada.target.classList.add("visible");
+        entrada.target.querySelectorAll("[data-count]").forEach(contar);
+        observador.unobserve(entrada.target);
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+  );
+  bloques.forEach((b) => observador.observe(b));
+}
+
+/* Sube un número desde 0 hasta su valor (data-count) en ~1.2 s */
+function contar(el) {
+  const destino = Number(el.dataset.count);
+  const decimales = Number(el.dataset.decimals || 0);
+  const formato = new Intl.NumberFormat(document.documentElement.lang, {
+    minimumFractionDigits: decimales,
+    maximumFractionDigits: decimales,
+  });
+  const inicio = performance.now();
+  const duracion = 1200;
+  const paso = (ahora) => {
+    const avance = Math.min(1, (ahora - inicio) / duracion);
+    const suave = 1 - Math.pow(1 - avance, 3);
+    el.textContent = formato.format(destino * suave);
+    if (avance < 1) requestAnimationFrame(paso);
+  };
+  requestAnimationFrame(paso);
 }
 
 /* Selector ES | EN */
