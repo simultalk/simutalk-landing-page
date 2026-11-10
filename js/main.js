@@ -3,7 +3,7 @@
    ========================================================= */
 
 // Configuración: cambiar APP_URL por la URL del frontend Angular desplegado
-const APP_URL = "http://localhost:4200";
+const APP_URL = "http://77.112.147.229";
 // Rutas de la app (ver app.routes.ts del frontend)
 const RUTAS_APP = {
   login: "/login",
