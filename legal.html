@@ -11,6 +11,18 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      
+      (function () {
+        try {
+          if (localStorage.getItem("simutalk.tema") === "oscuro") {
+            document.documentElement.dataset.tema = "oscuro";
+          }
+        } catch (e) {
+          
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body data-titulo="legal.title">
@@ -32,6 +44,21 @@
             <button type="button" data-lang="es" aria-pressed="true" lang="es">ES</button>
             <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
           </div>
+          <button
+            class="boton-tema"
+            id="boton-tema"
+            type="button"
+            aria-label="Cambiar a modo oscuro"
+            title="Cambiar a modo oscuro"
+          >
+            <svg class="icono-luna" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg class="icono-sol" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+            </svg>
+          </button>
           <a class="enlace-sesion" href="index.html" data-i18n="footer.back">Volver al inicio</a>
         </div>
       </div>
