@@ -16,10 +16,15 @@ const VIDEO_URL = ""; // ej. "https://www.youtube.com/watch?v=XXXX"
 const KM_POR_TRAMO = 12;
 const KG_CO2_POR_KM = 0.121;
 
+// Tema claro / oscuro
+const CLAVE_TEMA = "simutalk.tema"; // nombre con el que se guarda en localStorage
+const COLOR_BARRA = { claro: "#0f5c4f", oscuro: "#0b1f1b" }; // color de la barra del navegador en celulares
+
 document.addEventListener("DOMContentLoaded", () => {
   aplicarIdioma(idiomaInicial());
   configurarEnlacesApp();
   configurarIdioma();
+  configurarTema();
   configurarMenu();
   configurarDemo();
   configurarPreguntas();
@@ -187,4 +192,63 @@ function configurarVideo() {
   if (!VIDEO_URL || !seccion) return;
   seccion.hidden = false;
   document.getElementById("video-enlace").href = VIDEO_URL;
+}
+
+/* Lee el tema guardado en el navegador (con protección por si localStorage no está disponible) */
+function leerTemaGuardado() {
+  try {
+    return localStorage.getItem(CLAVE_TEMA);
+  } catch (e) {
+    return null;
+  }
+}
+
+/* Guarda el tema elegido */
+function guardarTema(tema) {
+  try {
+    localStorage.setItem(CLAVE_TEMA, tema);
+  } catch (e) {
+    /* sin almacenamiento disponible: se ignora */
+  }
+}
+
+/* Tema con el que arranca la página: el guardado, o "claro" si nunca eligió uno */
+function temaInicial() {
+  const guardado = leerTemaGuardado();
+  return guardado === "oscuro" || guardado === "claro" ? guardado : "claro";
+}
+
+/* Aplica el tema: cambia el atributo en <html>, el texto del botón y el color de la barra del navegador */
+function aplicarTema(tema) {
+  document.documentElement.dataset.tema = tema; // <html data-tema="oscuro">
+
+  const boton = document.getElementById("boton-tema");
+  if (boton) {
+    // En modo oscuro el botón ofrece volver al claro, y viceversa
+    const texto = t(tema === "oscuro" ? "theme.toLight" : "theme.toDark");
+    boton.setAttribute("aria-label", texto);
+    boton.setAttribute("title", texto);
+  }
+
+  const barra = document.querySelector('meta[name="theme-color"]');
+  if (barra) barra.setAttribute("content", COLOR_BARRA[tema]);
+}
+
+/* Botón de cambio de tema */
+function configurarTema() {
+  aplicarTema(temaInicial());
+
+  const boton = document.getElementById("boton-tema");
+  if (!boton) return;
+
+  boton.addEventListener("click", () => {
+    const nuevo = document.documentElement.dataset.tema === "oscuro" ? "claro" : "oscuro";
+    aplicarTema(nuevo);
+    guardarTema(nuevo);
+  });
+
+  // Si cambia el idioma, se vuelve a escribir el texto del botón en el idioma nuevo
+  document.addEventListener("idiomacambiado", () => {
+    aplicarTema(document.documentElement.dataset.tema);
+  });
 }
